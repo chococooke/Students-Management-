@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/connect.js");
 
-const User = sequelize.define('student', {
+const Student = sequelize.define('student', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -19,7 +19,7 @@ const User = sequelize.define('student', {
 async function syncDatabase() {
     try {
         await sequelize.sync({ force: false });
-        console.log('User table has been created');
+        console.log('Student table has been created');
     } catch(err){
         console.log(err);
     }
@@ -27,4 +27,4 @@ async function syncDatabase() {
 
 syncDatabase();
 
-module.exports = User;
+module.exports = Student;
